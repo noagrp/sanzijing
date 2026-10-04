@@ -66,7 +66,19 @@ h1{margin:0;color:#e9e0c7;font-size:clamp(28px,4vw,42px)}
   border-radius:12px;background:#0e100d;color:var(--ink);font:inherit;outline:none
 }
 .search:focus{border-color:rgba(189,208,178,.5)}
-.toc-list{display:flex;flex-direction:column;gap:5px;max-height:68vh;overflow:auto;padding-right:3px}
+.toc-list{
+  display:flex;flex-direction:column;gap:5px;max-height:68vh;overflow:auto;padding-right:3px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(189,208,178,.24) transparent;
+}
+.toc-list::-webkit-scrollbar{width:5px}
+.toc-list::-webkit-scrollbar-track{background:transparent}
+.toc-list::-webkit-scrollbar-thumb{
+  background:rgba(189,208,178,.22);
+  border-radius:999px;
+}
+.toc-list::-webkit-scrollbar-thumb:hover{background:rgba(189,208,178,.38)}
+.toc-list::-webkit-scrollbar-button{display:none;width:0;height:0}
 .toc-btn{
   width:100%;display:flex;align-items:center;gap:9px;text-align:left;padding:9px 10px;
   border:1px solid transparent;border-radius:10px;background:transparent;color:#aaa497;
