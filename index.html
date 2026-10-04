@@ -48,6 +48,17 @@ h1{margin:0;color:#e9e0c7;font-size:clamp(28px,4vw,42px)}
 .sub{margin:5px 0 0;color:var(--muted);font-size:12px}
 .back{color:var(--muted);text-decoration:none;font-size:12px;white-space:nowrap}
 .back:hover{color:var(--jade2)}
+.about{
+  margin-bottom:14px;padding:16px 17px;border:1px solid var(--line);border-radius:16px;
+  background:linear-gradient(180deg,rgba(26,31,24,.9),rgba(18,21,17,.9));
+}
+.about-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px
+}
+.about-item{min-width:0}
+.about-item b{display:block;margin-bottom:3px;color:var(--jade2);font-size:11px}
+.about-item span{color:#c5c0b2;font-size:12px;line-height:1.65}
+.about-summary{grid-column:1/-1;padding-top:4px}
 .notice{
   margin-bottom:18px;padding:15px 17px;border:1px solid var(--line);border-radius:16px;
   background:linear-gradient(180deg,rgba(26,31,24,.9),rgba(18,21,17,.9));
@@ -140,6 +151,8 @@ footer a:hover{color:var(--jade2)}
   .original{padding:15px}
   .original p{font-size:19px;line-height:1.85}
   .terms{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .about-summary{grid-column:auto}
 }
 </style>
 </head>
@@ -152,6 +165,8 @@ footer a:hover{color:var(--jade2)}
   </div>
   <a class="back" href="https://noagrp.github.io/zhong/">返回 中</a>
 </header>
+
+<section class="about" id="bookAbout" aria-label="书籍简介"></section>
 
 <div class="notice" id="sourceNotice">
   <b>版本说明</b><br>
