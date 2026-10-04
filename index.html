@@ -193,7 +193,22 @@ footer a:hover{color:var(--jade2)}
 (async()=>{
  const $=id=>document.getElementById(id);
  try{
-  const engine=await loadSanzijingEngine('./data/sanzijing.json?v=20261004-1');
+  const engine=await loadSanzijingEngine('./data/sanzijing.json?v=20261005-1');
+  const meta=engine.getMeta();
+  const info=meta.bookInfo||{};
+  const rows=[
+    ["书名",info.title],
+    ["作者 / 传统归属",info.authorship],
+    ["时代",info.period],
+    ["类别",info.category],
+    ["结构",info.structure]
+  ].filter(x=>x[1]);
+  $("bookAbout").innerHTML=
+    '<div class="about-grid">'+
+    rows.map(x=>'<div class="about-item"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')+
+    (info.summary?'<div class="about-item about-summary"><b>简介</b><span>'+info.summary+'</span></div>':'')+
+    '</div>';
+
   const all=engine.list();
   let selected=all[0];
 
